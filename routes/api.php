@@ -13,6 +13,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/productsAPI', [ProductController::class, 'show']);
     Route::post('logout',[UserAuthController::class,'logout']);
+    Route::patch('/products/{id}/update_quantity', [ProductController::class, 'updateQuantity']);
+    Route::post('/products/{id}/sell', [ProductController::class, 'sellProduct']);
 });
 
 Route::post('register',[UserAuthController::class,'register']);

@@ -5,11 +5,7 @@
         </h2>
     </x-slot>
 
-
-
     <div class="mx-10 my-4 ">
-
-
         <div>
             @if(session()->has('success'))
             <div>
@@ -37,8 +33,8 @@
                             <th scope="col" class="px-6 py-3">Qty</th>
                             <th scope="col" class="px-6 py-3">Price</th>
                             <th scope="col" class="px-6 py-3">Description</th>
-                            <th scope="col" class="px-6 py-3"></th>
-                            <th scope="col" class="px-6 py-3"></th>
+                            <th scope="col" class="px-6 py-3">Edit</th>
+                            <th scope="col" class="px-6 py-3">Delete</th>
                         </tr>
                     </thead>
                     @foreach($products as $product )

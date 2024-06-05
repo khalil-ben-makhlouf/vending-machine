@@ -10,6 +10,8 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
@@ -35,9 +37,10 @@
         </main>
     </div>
     
-    
 </body>
-<x-footer>
-</x-footer>
+<script src="{{ mix('js/app.js') }}"></script>
 
 </html>
+
+<x-footer>
+</x-footer>
