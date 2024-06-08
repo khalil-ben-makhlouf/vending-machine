@@ -36,29 +36,12 @@
                     datasets: [{
                         label: 'Revenue Generated Per Day',
                         data: revenue,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 205, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(201, 203, 207, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(255, 159, 64)',
-                            'rgb(255, 205, 86)',
-                            'rgb(75, 192, 192)',
-                            'rgb(54, 162, 235)',
-                            'rgb(153, 102, 255)',
-                            'rgb(201, 203, 207)'
-                        ],
-                        borderWidth: 1
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2
                     }]
                 },
                 options: {
-                    
                     animation: {
                         onComplete: function() {
                             delayed = true;
@@ -71,7 +54,6 @@
                             return delay;
                         }
                     },
-
                     scales: {
                         x: {
                             stacked: true
@@ -92,12 +74,12 @@
                     datasets: [{
                         label: 'Number of Products Sold Per Day',
                         data: quantitySold,
-                        borderColor: 'rgba(255, 99, 132, 1)',
-                        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        backgroundColor: 'rgba(153, 102, 255, 0.5)',
                         pointStyle: 'circle',
-                        pointRadius: 10,
-                        pointHoverRadius: 15,
-                        pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                        pointRadius: 6,
+                        pointHoverRadius: 10,
+                        pointBackgroundColor: 'rgba(153, 102, 255, 1)',
                         pointBorderColor: '#fff',
                         pointBorderWidth: 2
                     }]
@@ -119,25 +101,8 @@
                     datasets: [{
                         label: 'Most Sold Products',
                         data: productQuantities,
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 205, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(201, 203, 207, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(255, 159, 64)',
-                            'rgb(255, 205, 86)',
-                            'rgb(75, 192, 192)',
-                            'rgb(54, 162, 235)',
-                            'rgb(153, 102, 255)',
-                            'rgb(201, 203, 207)'
-                        ],
-                        hoverOffset: 4,
+                        backgroundColor: 'rgba(255, 159, 64, 0.5)',
+                        borderColor: 'rgba(255, 159, 64, 1)',
                         borderWidth: 1
                     }]
                 },
@@ -150,7 +115,7 @@
                 }
             });
 
-            // Render Most Sold Categories chart
+            // Render Most Sold Categories chart with no axes
             var mostSoldCategoriesChart = new Chart(document.getElementById('mostSoldCategoriesChart'), {
                 type: 'doughnut',
                 data: {
@@ -159,66 +124,101 @@
                         label: 'Most Sold Categories',
                         data: categoryQuantities,
                         backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(255, 205, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(201, 203, 207, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(255, 159, 64)',
-                            'rgb(255, 205, 86)',
-                            'rgb(75, 192, 192)',
-                            'rgb(54, 162, 235)',
-                            'rgb(153, 102, 255)',
-                            'rgb(201, 203, 207)'
+                            '#3498db',
+                            '#9b59b6',
+                            '#f1c40f',
+                            '#1abc9c',
+                            '#e74c3c',
+                            '#34495e'
                         ],
                         borderWidth: 1
                     }]
                 },
                 options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                        }
+                    },
                     scales: {
+                        x: {
+                            display: false
+                        },
                         y: {
-                            beginAtZero: true
+                            display: false
                         }
                     }
                 }
             });
         });
     </script>
+<style>
+    .chart-container {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-    <style>
-        .chart-container {
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-        }
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+    }
 
-        canvas {
-            width: 100% !important;
-            height: 400px !important;
-        }
-    </style>
+    #mostSoldCategoriesChart {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .chart-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<div class="pt-12 bg-gray-50 dark:bg-gray-900 sm:pt-20">
+    <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold leading-9 text-gray-900 dark:text-white sm:text-4xl sm:leading-10">
+                Vending Machine Performance
+            </h2>
+            <p class="mt-3 text-xl leading-7 text-gray-600 dark:text-gray-400 sm:mt-4">
+                This dashboard provides a real-time overview of your vending machine's performance.
+            </p>
+            <p> Quickly identify key metrics to optimize your stock, sales, and overall machine health.</p>
+        </div>
+    </div>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
-                <div class="chart-container">
-                    <canvas id="revenueChart"></canvas>
-                </div>
-                <div class="chart-container mt-6">
-                    <canvas id="quantitySoldChart"></canvas>
-                </div>
-                <div class="chart-container mt-6">
-                    <canvas id="mostSoldProductsChart"></canvas>
-                </div>
-                <div class="chart-container mt-6">
-                    <canvas id="mostSoldCategoriesChart"></canvas>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+                    <div class="chart-container">
+                        <div class="chart-title">Revenue Generated Per Day</div>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-title">Most Sold Products</div>
+                        <canvas id="mostSoldProductsChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-title">Number of Products Sold Per Day</div>
+                        <canvas id="quantitySoldChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-title">Most Sold Categories</div>
+                        <canvas id="mostSoldCategoriesChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </x-app-layout>
