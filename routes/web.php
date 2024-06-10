@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
 
+    Route::post('/products/refill', [ProductController::class, 'refill'])->name('product.refill');    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

@@ -45,13 +45,15 @@ class ProductController extends Controller
         }
 
         $newProduct = Product::create($data);
-        return redirect(route('product.index'))->with('success', 'Product created successfully!');
+        return redirect(route('product.index'));
     }
 
     public function edit(Product $product)
     {
         return view('products.edit', ['product' => $product]);
     }
+
+    
 
     public function update(Product $product, Request $request)
     {
@@ -77,14 +79,25 @@ class ProductController extends Controller
 
         $product->update($data);
 
-        return redirect(route('product.index'))->with('success', 'Product Updated Successfully');
+        return redirect(route('product.index'));
     }
+
+    public function refill()
+    {
+        $user = Auth::user();
+        DB::table('products')
+            ->where('user_id', $user->id)
+            ->update(['qty' => 10]);
+    
+        return redirect(route('product.index'));
+    }
+    
 
     public function destroy(Product $product, Request $request)
     {
         Storage::disk('public')->delete($product->image);
         $product->delete();
-        return redirect(route('product.index'))->with('success', 'Product deleted Successfully');
+        return redirect(route('product.index'));
     }
 
     public function show()

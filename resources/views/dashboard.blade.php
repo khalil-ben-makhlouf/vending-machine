@@ -36,8 +36,8 @@
                     datasets: [{
                         label: 'Revenue Generated Per Day',
                         data: revenue,
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(255, 159, 64, 0.5)',
+                        borderColor: 'rgba(255, 159, 64, 0.5)',
                         borderWidth: 2
                     }]
                 },
@@ -183,7 +183,7 @@
     }
 </style>
 
-<div class="pt-12 bg-gray-50 dark:bg-gray-900 sm:pt-20">
+<div class="pt-12 sm:pt-20">
     <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-extrabold leading-9 text-gray-900 dark:text-white sm:text-4xl sm:leading-10">
@@ -198,7 +198,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                     <div class="chart-container">
                         <div class="chart-title">Revenue Generated Per Day</div>
