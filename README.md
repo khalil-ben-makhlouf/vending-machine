@@ -9,6 +9,7 @@ Features :
     Inventory Management: Real-time tracking and proactive restocking.
     Customization and Adaptability: Configurable for various product types and environments.
     Remote Monitoring: Web application for monitoring and managing vending machine operations.
+![gui](https://github.com/user-attachments/assets/ed021114-9bd0-43a4-b2a6-c98dc33aa574)
 
 Technologies Used:
 
