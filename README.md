@@ -9,7 +9,6 @@ Features :
     Inventory Management: Real-time tracking and proactive restocking.
     Customization and Adaptability: Configurable for various product types and environments.
     Remote Monitoring: Web application for monitoring and managing vending machine operations.
-![gui](https://github.com/user-attachments/assets/ed021114-9bd0-43a4-b2a6-c98dc33aa574)
 
 Technologies Used:
 
@@ -25,4 +24,7 @@ System Architecture:
     Raspberry Pi: Manages the vending machine's operations and communicates with the server.
     Web Application: Allows operators to monitor sales, manage inventory, and generate reports.
     Server: Handles HTTP requests and responses between the web application and the vending machine.
+
+    ![communication system](https://github.com/user-attachments/assets/749413b4-2af4-4276-bc60-254de330abcf)
+
 
