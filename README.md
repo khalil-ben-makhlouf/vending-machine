@@ -54,4 +54,3 @@ The 7-inch touch screen utilizes an HDMI cable for video transmission and a USB 
 ### Grounding
 All components in the system share a common ground connection. This ensures a stable reference point for all electrical circuits.
 
-![circuit25_1_optimized_10](https://github.com/user-attachments/assets/5f65276a-a9dc-4cc9-b4ea-00ceb7a78ebb)
