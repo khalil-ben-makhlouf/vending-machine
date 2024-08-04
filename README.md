@@ -25,6 +25,7 @@ System Architecture:
     Web Application: Allows operators to monitor sales, manage inventory, and generate reports.
     Server: Handles HTTP requests and responses between the web application and the vending machine.
 
-    ![communication system](https://github.com/user-attachments/assets/749413b4-2af4-4276-bc60-254de330abcf)
+
+![communication system](https://github.com/user-attachments/assets/749413b4-2af4-4276-bc60-254de330abcf)
 
 
